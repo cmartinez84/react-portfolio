@@ -1,22 +1,43 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Header from 'src/Header'
+import Header from './Header/index.jsx'
+import AboutMe from './AboutMe/index.jsx'
+import EducationExperience from './EducationExperience/index.jsx'
+import ProjectsContainer from './ProjectsContainer/index.jsx'
 import './App.css';
 
 class App extends Component {
+  state = {
+    selectedPanel: 'education',
+  }
+
+  changPanel=(panel)=>{
+    this.setState({selectedPanel: panel});
+  }
   render() {
+    var allPanels = {
+            header: <Header/>,
+            education: <EducationExperience/>,
+            about : <AboutMe/>,
+            projects: <ProjectsContainer/>,
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+      <div>
+        {Object.keys(allPanels).map((panel)=>
+          <p key={panel} onClick={()=>this.changPanel(panel)}>{panel}</p>
+        )}
+        <div className="selectedPanel">
+          {allPanels[this.state.selectedPanel]}
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+// <ProjectsContainer/>
+// <AboutMe/>
+// <EducationExperience/>
