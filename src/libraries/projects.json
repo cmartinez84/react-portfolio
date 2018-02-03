@@ -23,10 +23,14 @@
     "imageURL": "screenshots/shoppr.png"
   },
   "telephoto":{
-    "name": "telephoto",
+    "name": "Telephoto",
     "description": ["The assignment was to practice API calls and build a site with Node.js. What resulted was a game of free association, where a user clicks on an image to generate tags and generates similar pictures, with the goal of trying to obtain a picture with a destination tag in 15 clicks of less. The game uses two APIs: one to generate tags and the other to generate images."],
     "repoURL": "https://github.com/chrismartinez84/telephoto",
     "liveURL": "https://chrismartinez84.github.io/telephoto/",
     "imageURL": "screenshots/telephoto.png"
+  },
+  "Recentia": {
+    "name" : "Recentia Health",
+    "description": ["During my internship with Recentia Health, my team was tasked with creating an interface for inputting patient problems and organizing patient history. Our component of the Recentia's software involved creating a front-end solution to creating and displaying many-to-many relationships, as well as parent-child relationships, all keeping in mind specified degrees of freedom to give the user."]
   }
 }
