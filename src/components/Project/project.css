@@ -1,4 +1,9 @@
 .screenshot{
   /*width: 100px;*/
   /*max-width: */
+  max-height: 220px;
+}
+.project-name{
+  font-family: 'Fugaz One', cursive;
+
 }

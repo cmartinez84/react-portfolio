@@ -1,47 +1,20 @@
+html{
+  /*background: url('/subtle.jpg') center center no-repeat;*/
 
-.custom-modal {
-    /*display: none;*/
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    /*custom settings below*/
-    padding: 0px !important
-
+  background-size: cover;
+  height: 100%;
+  /*background*/
 }
-
-/* Modal Content/Box */
-.custom-modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    /*padding: 20px;*/
-    border: 1px solid #888;
-    width: 20%; /* Could be more or less, depending on screen size */
-    /*custom vv */
-    /*background: transparent;*/
+body{
+  /*font-size: 1em !important;*/
+  background: rgba(255,255,255,0.7);
 }
+/*body{
+  background: rgba(30, 30, 30, .5 );
+  height: 100%;
+}*/
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/*
 .menu-option{
   margin: 0;
   padding: 0;
@@ -56,4 +29,26 @@
 }
 .hamburger-icon{
   font-size: 5em
+}*/
+.main-menu-option{
+  transition: .3s;
+  text-transform: uppercase;
+}
+.main-menu-option:hover, .selected-menu-option{
+  font-size: 2em;
+  transition: .3s;
+  color: #FF4500;
+}
+
+.menu-sidebar{
+  background-color: #212121;
+  color: white;
+  height: 100%;
+}
+
+
+
+.container{
+  margin-top: 1px;
+  height: 100%;
 }

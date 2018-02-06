@@ -4,7 +4,7 @@ class AboutMe extends Component {
   render() {
     return (
       <div>
-        <h2>Bio</h2>
+      
         <div>
           "He who wishes to be born must first destroy a world" - Herman Hesse
 

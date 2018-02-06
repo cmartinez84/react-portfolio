@@ -1,0 +1,12 @@
+.contact-icon{
+  display: inline-block;
+  margin: auto 10px
+}
+.landing-photo{
+  border-radius: 25px;
+  filter: grayscale(42%);
+}
+.landing-photo-frame{
+  background: orange;
+  /*transform: scale(2, 0.5);*/
+}

@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
+import './landing.css';
+
+<i class="fas fa-envelope"></i>
+
 
 class Landing extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-sm-3">
-          <img src="sampleme.jpg" className="img-responsive"></img>
+        <div className="col-sm-4">
+          <div className="img-responsive landing-photo-frame">
+          <img src="sampleme.jpg" className="img-responsive landing-photo"></img>
+          </div>
+            <a href="https://github.com/cmartinez84"
+              className="contact-icon"
+              >
+              <h1><i class="fab fa-linkedin" ></i></h1>
+              </a>
+            <a href="https://www.linkedin.com/in/cmartinez84/"
+                className="contact-icon"
+                >
+              <h1><i class="fab fa-github-square"></i></h1>
+            </a>
+            <a href="https://github.com/cmartinez84"
+              className="contact-icon"
+              >
+              <h1><i class="fas fa-envelope"></i>
+              </h1>
+              </a>
         </div>
-        <div className="col-sm-9">
-          <h1>Chris Martinez</h1>
+        <div className="col-sm-8">
+          <h1>CHRIS MARTINEZ</h1>
           <h3>Recent Epicodus Graduate and Junior Web Developer</h3>
-          <h3>What would you like to know about me?</h3>
+          <p>What would you like to know about me?</p>
+          <p>How did I get here?</p>
+          <p>What am I programming?</p>
         </div>
       </div>
     );
