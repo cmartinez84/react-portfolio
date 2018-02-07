@@ -10,3 +10,7 @@
   background: orange;
   /*transform: scale(2, 0.5);*/
 }
+.redirect-question:hover{
+  color:  #FF4500;
+font-weight:bolder;
+}

@@ -16,7 +16,7 @@ import soundPath4 from './sounds/sound4.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'skills',
+    selectedPanel: 'contact',
     isModalShowing: false,
   }
 
@@ -64,7 +64,7 @@ class App extends Component {
        return soundObj;
      }
 
-  changPanel=(panel)=>{
+  changePanel=(panel)=>{
       this.setState({selectedPanel: panel});
       this.selectSound.play();
   }
@@ -76,7 +76,7 @@ class App extends Component {
   render() {
 
     const allPanels = {
-            home: <Landing hoverSound={this.hoverSound} />,
+            home: <Landing hoverSound={this.hoverSound} redirectTo={this.changePanel} />,
           ['education/ experience']: <EducationExperience/>,
             bio : <AboutMe/>,
             projects: <ProjectsContainer
@@ -97,7 +97,7 @@ class App extends Component {
                         ${this.state.selectedPanel === panel ? 'selected-menu-option' : ''}
                         `}
                       key={panel}
-                      onClick={()=>this.changPanel(panel)}
+                      onClick={()=>this.changePanel(panel)}
                       onMouseOver={this.hoverSound.play}
                       >
 
@@ -116,7 +116,3 @@ class App extends Component {
 }
 
 export default App;
-
-// <ProjectsContainer/>
-// <AboutMe/>
-// <EducationExperience/>

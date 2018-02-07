@@ -5,6 +5,12 @@ import './landing.css';
 
 
 class Landing extends Component {
+
+  redirectTo=(panel)=>{
+    console.log(panel);
+    this.props.redirectTo(panel);
+  }
+
   render() {
     return (
       <div className="row">
@@ -32,9 +38,9 @@ class Landing extends Component {
         <div className="col-sm-8">
           <h1>CHRIS MARTINEZ</h1>
           <h3>Recent Epicodus Graduate and Junior Web Developer</h3>
-          <p>What would you like to know about me?</p>
-          <p>How did I get here?</p>
-          <p>What am I programming?</p>
+          <p >What would you like to know about me?</p>
+          <p className="redirect-question" onClick={()=>this.redirectTo('bio')}>How did I get here?</p>
+          <p className="redirect-question" onClick={()=>this.redirectTo('projects')}>What am I programming?</p>
         </div>
       </div>
     );
