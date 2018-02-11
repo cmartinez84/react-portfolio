@@ -20,9 +20,10 @@ class ContactMe extends Component {
     }
 
     const EMAIL_API_KEY = process.env.REACT_APP_EMAIL_API_KEY;
-    const EMAIL_API_URL= process.env.REACT_EMAIL_API_URL;
+    const EMAIL_API_URL= process.env.REACT_APP_EMAIL_API_URL;
     const endpointURL = `${EMAIL_API_URL}/send/${EMAIL_API_KEY}`;
 
+    console.log(process.env);
     fetch(endpointURL, {
         method: 'POST',
         body: JSON.stringify(messageData),
