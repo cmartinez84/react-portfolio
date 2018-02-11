@@ -6,9 +6,29 @@ class ContactMe extends Component {
     subject: '',
     message: ''
   }
+  
   handleChange=(e)=>{
     this.setState({[e.target.name]: e.target.value})
   }
+
+  handleSubmit=()=>{
+
+    const messageData = {
+      "email": this.state.email,
+      "subject":  this.state.subject,
+      "message": this.state.message,
+    }
+
+    const APIKEY = process.env.REACT_APP_EMAIL_API_KEY;
+    const URL= process.env.REACT_EMAIL_API_URL;
+    const endpointURL = `${URL}/send/${APIKEY}`;
+
+    fetch(endpointURL, {
+        method: 'POST',
+        body: JSON.stringify(messageData),
+        headers: { "Content-Type": "application/json" }
+      }).then((res)=>{console.log(res);});//end fetch
+    }
 
   render() {
     return (
@@ -17,7 +37,7 @@ class ContactMe extends Component {
         <h6>Or leave a message in my <a>Three.js echo chamber</a></h6>
         <div className="form-group">
           <label>Email</label>
-          <input type="text" placeholder="me@email.com" className="form-control" id="contact-email" value={this.state.email}
+          <input type="email" placeholder="me@email.com" className="form-control" id="contact-email" value={this.state.email}
             onChange={this.handleChange} name="email"/>
         </div>
 
@@ -30,7 +50,7 @@ class ContactMe extends Component {
         <label>Message</label>
         <textarea className="form-control" id="contact-body" value={this.state.message} name="message" onChange={this.handleChange}/>
       </div>
-      <input type="submit"/>
+      <button type="button"  onClick={this.handleSubmit}>SUBMIT</button>
     </div>
     );
   }

@@ -9,6 +9,9 @@ import EducationExperience from './components/EducationExperience/index.jsx'
 import ProjectsContainer from './components/ProjectsContainer/index.jsx'
 import './App.css';
 
+import * as PROJECT_DATA from  './libraries/projects.json';
+
+
 import soundPath1 from './sounds/sound1.mp3';
 import soundPath2 from './sounds/sound2.mp3';
 import soundPath3 from './sounds/sound3.mp3';
@@ -36,6 +39,7 @@ class App extends Component {
       this.hoverSound = this.audioFileLoader(soundPath3);
       this.selectSound = this.audioFileLoader(soundPath4);
     }
+
   }
 
   audioFileLoader = (fileDirectory) =>{
@@ -85,7 +89,7 @@ class App extends Component {
             skills: <Skills/>,
             contact: <ContactMe/>
     }
-
+//
     return (
 
       <div className="row" >
