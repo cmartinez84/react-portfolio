@@ -6,7 +6,7 @@ class ContactMe extends Component {
     subject: '',
     message: ''
   }
-  
+
   handleChange=(e)=>{
     this.setState({[e.target.name]: e.target.value})
   }
@@ -19,9 +19,9 @@ class ContactMe extends Component {
       "message": this.state.message,
     }
 
-    const APIKEY = process.env.REACT_APP_EMAIL_API_KEY;
-    const URL= process.env.REACT_EMAIL_API_URL;
-    const endpointURL = `${URL}/send/${APIKEY}`;
+    const EMAIL_API_KEY = process.env.REACT_APP_EMAIL_API_KEY;
+    const EMAIL_API_URL= process.env.REACT_EMAIL_API_URL;
+    const endpointURL = `${EMAIL_API_URL}/send/${EMAIL_API_KEY}`;
 
     fetch(endpointURL, {
         method: 'POST',
