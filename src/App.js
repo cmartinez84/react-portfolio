@@ -19,7 +19,7 @@ import soundPath4 from './sounds/sound4.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'contact',
+    selectedPanel: 'skills',
     isModalShowing: false,
   }
 

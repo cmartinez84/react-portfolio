@@ -11,7 +11,7 @@ class Skills extends Component {
       ember : 'icons/ember.png',
       firebase : 'icons/firebase.webp',
       heroku: 'icons/heroku.png',
-      javascript : 'icons/Javascript_logo.svg',
+      javascript : 'icons/javascript.png',
       jquery: 'icons/jquery.png',
       php: 'icons/logo-php.png',
       mysql : 'icons/mysql.png',
@@ -23,11 +23,13 @@ class Skills extends Component {
     return (
       <div>
         <h2>Skills</h2>
-        <div className="row">
+        <div className="">
           {Object.keys(techIcons).map(key=>
-            <div key={key} className="col-xs-3">
-              <img className="img-respsonsive tech-icon" src={techIcons[key]}></img>
-              <span className="tech-icon-name">{key}</span>
+            <div key={key} className="col-xs-3 skill-icon-frame-column ">
+              <div className="skill-icon-frame-square">
+                <img className="img-responsive tech-icon" src={techIcons[key]}></img>
+                <span className="tech-icon-name">{key}</span>
+              </div>
             </div>
           )}
 

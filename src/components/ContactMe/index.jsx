@@ -10,7 +10,6 @@ class ContactMe extends Component {
     sendingEmail: false
   }
   componentWillMount=()=>{
-    console.log(process.env);
   }
 
   handleChange=(e)=>{
