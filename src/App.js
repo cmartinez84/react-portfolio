@@ -16,28 +16,38 @@ import soundPath1 from './sounds/sound1.mp3';
 import soundPath2 from './sounds/sound2.mp3';
 import soundPath3 from './sounds/sound3.mp3';
 import soundPath4 from './sounds/sound4.mp3';
+import successSoundPath from './sounds/success.mp3';
+
 
 class App extends Component {
   state = {
     selectedPanel: 'skills',
     isModalShowing: false,
+    gainNodeVolume: .3,
   }
 
   audioCtx;
+  gainNode;
   sound1;
   sound2;
   hoverSound;
   selectSound;
+  successSound;
 
   componentWillMount(){
-
     const localAudioInitializer = window.AudioContext || window.webkitAudioContext || window.webkitAudioContext || null;
     if(localAudioInitializer ){
       this.audioCtx = new localAudioInitializer();
+      this.gainNode = this.audioCtx.createGain();
+      console.log(this.gainNode);
+      this.gainNode.connect(this.audioCtx.destination);
+      this.gainNode.gain.value = this.state.gainNodeVolume;
+
       this.sound1 = this.audioFileLoader(soundPath1);
       this.sound2 = this.audioFileLoader(soundPath2);
       this.hoverSound = this.audioFileLoader(soundPath3);
       this.selectSound = this.audioFileLoader(soundPath4);
+      this.successSound = this.audioFileLoader(successSoundPath);
     }
 
   }
@@ -62,7 +72,7 @@ class App extends Component {
             //  this.isPLaying = true;
            var playSound = this.audioCtx.createBufferSource();
            playSound.buffer = soundObj.soundToPlay;
-           playSound.connect(this.audioCtx.destination);
+           playSound.connect(this.gainNode);
            playSound.start();
        }
        return soundObj;
@@ -87,7 +97,7 @@ class App extends Component {
                       hoverSound={this.hoverSound}
                       selectSound={this.selectSound}/>,
             skills: <Skills/>,
-            contact: <ContactMe/>
+            contact: <ContactMe successSound={this.successSound}/>
     }
 //
     return (
@@ -96,6 +106,7 @@ class App extends Component {
         <div className="col-sm-3 menu-sidebar">
           {Object.keys(allPanels)
                   .map((panel)=>
+                  <div className="menu-row">
                     <p
                       className={`main-menu-option
                         ${this.state.selectedPanel === panel ? 'selected-menu-option' : ''}
@@ -104,10 +115,9 @@ class App extends Component {
                       onClick={()=>this.changePanel(panel)}
                       onMouseOver={this.hoverSound.play}
                       >
-
                       {panel}
-                      <hr/>
                     </p>
+                  </div>
           )}
         </div>
         <div className="selectedPanel col-sm-8">

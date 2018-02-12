@@ -1,7 +1,12 @@
 .contact-icon{
   display: inline-block;
-  margin: auto 10px
+  margin: auto 10px;
+  color: rgb(255,154,0);
 }
+.contact-icon:hover{
+  color: rgb(255,69,0);
+}
+
 .landing-photo{
   border-radius: 25px;
   filter: grayscale(42%);
@@ -12,5 +17,5 @@
 }
 .redirect-question:hover{
   color:  #FF4500;
-font-weight:bolder;
+  font-weight:bolder;
 }

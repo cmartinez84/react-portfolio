@@ -35,7 +35,7 @@ body{
   text-transform: uppercase;
 }
 .main-menu-option:hover, .selected-menu-option{
-  font-size: 2em;
+  font-size: 1.5em;
   transition: .3s;
   color: #FF4500;
 }
@@ -45,6 +45,12 @@ body{
   color: white;
   height: 100%;
 }
+.menu-row{
+  border-bottom: 1px solid white;
+  line-height: 4em;
+  cursor: pointer;
+}
+
 
 
 
@@ -52,3 +58,14 @@ body{
   margin-top: 1px;
   height: 100%;
 }
+
+
+/*maybe
+hr {
+border: 1;
+clear:both;
+display:block;
+width: 96%;
+color: #FFFF00;
+height: 1px;
+}*/

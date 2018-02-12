@@ -49,6 +49,7 @@ class ContactMe extends Component {
               message: '',
               sendingEmail: false
             });
+            this.props.successSound.play();
           }
         });//end fetch/then
     }
@@ -73,7 +74,7 @@ class ContactMe extends Component {
         <label>Message</label>
         <textarea className="form-control" id="contact-body" value={this.state.message} name="message" onChange={this.handleChange} disabled={this.state.sendingEmail}/>
       </div>
-      <button type="button"  onClick={this.handleSubmit} disabled={this.state.sendingEmail}>SUBMIT</button>
+      <button type="button"  onClick={this.handleSubmit} disabled={this.state.sendingEmail} >SUBMIT</button>
 
         <ReCAPTCHA
           ref="recaptcha"
