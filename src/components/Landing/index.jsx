@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './landing.css';
 
-<i class="fas fa-envelope"></i>
 
 
 class Landing extends Component {
@@ -37,7 +36,7 @@ class Landing extends Component {
         </div>
         <div className="col-sm-8">
           <h1>CHRIS MARTINEZ</h1>
-          <h3>Recent Epicodus Graduate and Junior Web Developer</h3>
+          <h3 className="sub-header-font">Recent Epicodus Graduate and Junior Web Developer</h3>
           <p >What would you like to know about me?</p>
           <p className="redirect-question" onClick={()=>this.redirectTo('bio')}>How did I get here?</p>
           <p className="redirect-question" onClick={()=>this.redirectTo('projects')}>What am I programming?</p>

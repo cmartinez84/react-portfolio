@@ -5,7 +5,7 @@ class AboutMe extends Component {
   render() {
     return (
       <div >
-
+        <h1>A LITTLE MORE ABOUT ME...</h1>
         <div className="content-panel">
           "He who wishes to be born must first destroy a world" - Herman Hesse
 

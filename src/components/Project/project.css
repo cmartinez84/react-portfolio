@@ -2,8 +2,34 @@
   /*width: 100px;*/
   /*max-width: */
   max-height: 220px;
+  border: 1px solid rgba(0,0,0,.3);
 }
 .project-name{
   font-family: 'Fugaz One', cursive;
+  background: rgb(33, 33, 33);
+  line-height: 2em;
+  text-transform: uppercase;
+  color: #FF4500;
+}
 
+.project-name-wrapper{
+  padding-right: 10px;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.project-links * {
+  font-size: 1em;
+  line-height: 0;
+  display: inline-block;
+}
+.description-text{
+  font-family: 'Open Sans', sans-serif;
+}
+.project-modal-technologies{
+  border: 1px solid black;
+  padding: 1px 10px;
+  border-radius: 19px;
+  color: white;
+  background: black
 }

@@ -41,9 +41,7 @@ class ProjectsContainer extends Component {
     <div className="custom-modal row" >
       <div className="custom-modal-content col-sm-8 col-sm-offset-2">
         <span className="close" onClick={this.toggleModal}>&times;</span>
-        <br></br>
-        <br></br>
-          <div className="row">
+          <div className="row project-component-wrapper">
             {Object.keys(PROJECT_DATA).map((i)=>
               i === this.state.selectedProject ?
               <Project
@@ -65,11 +63,11 @@ class ProjectsContainer extends Component {
 // style=background-image: url(http://i54.tinypic.com/4zuxif.jpg)
     return (
       <div>
+        <h1>PROJECTS</h1>
         <div className="row">
           {Object.keys(PROJECT_DATA).map((i)=>
             <div className={`${this.state.selectedProject === i ? 'selected-project' :''} project-preview-container col-sm-4 `}
                   onClick={()=>{this.selectProject(i)}} key={i}
-
                   >
                   <div className="col-sm-12 preview-inner-shell"   onMouseOver={this.props.hoverSound.play}>
 

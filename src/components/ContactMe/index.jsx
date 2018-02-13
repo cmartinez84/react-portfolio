@@ -3,9 +3,9 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 class ContactMe extends Component {
   state={
-    email: 'cardamomclouds84@gmail.com',
-    subject: 'recapcha testin\'',
-    message: 'boo',
+    email: '',
+    subject: '',
+    message: '',
     recaptcha: '',
     sendingEmail: false
   }
@@ -50,26 +50,27 @@ class ContactMe extends Component {
           }
         });//end fetch/then
     }
+    //website down
+    // <h3 className="sub-header-font">Or leave a message in my <a>Three.js echo chamber</a></h3>
 
   render() {
     return (
       <div  method="POST">
-        <h2>Contact Me Today</h2>
-        <h6>Or leave a message in my <a>Three.js echo chamber</a></h6>
+        <h1>CONTACT ME TODAY</h1>
         <div className="form-group">
           <label>Email</label>
-          <input type="email" placeholder="me@email.com" className="form-control" id="contact-email" value={this.state.email}
+          <input type="email" placeholder="GwenIfillTower@gmail.com" className="form-control" id="contact-email" value={this.state.email}
             onChange={this.handleChange} name="email" disabled={this.state.sendingEmail}/>
         </div>
 
         <div className="form-group">
           <label>Subject</label>
-            <input type="text" placeholder="what am i getting myself into?" className="form-control" id="contact-subject" value={this.state.subject} name="subject" onChange={this.handleChange} disabled={this.state.sendingEmail}/>
+            <input type="text" placeholder="What is this about?" className="form-control" id="contact-subject" value={this.state.subject} name="subject" onChange={this.handleChange} disabled={this.state.sendingEmail}/>
         </div>
 
       <div className="form-group">
         <label>Message</label>
-        <textarea className="form-control" id="contact-body" value={this.state.message} name="message" onChange={this.handleChange} disabled={this.state.sendingEmail}/>
+        <textarea className="form-control" id="contact-body" value={this.state.message} name="message" onChange={this.handleChange} disabled={this.state.sendingEmail} placeholder="Tell me something good."/>
       </div>
       <button type="button"  onClick={this.handleSubmit} disabled={this.state.sendingEmail} >SUBMIT</button>
 

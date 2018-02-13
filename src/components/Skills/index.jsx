@@ -22,7 +22,7 @@ class Skills extends Component {
 
     return (
       <div>
-        <h2>Skills</h2>
+        <h1>SKILLS</h1>
         <div className="">
           {Object.keys(techIcons).map(key=>
             <div key={key} className="col-xs-3 skill-icon-frame-column ">

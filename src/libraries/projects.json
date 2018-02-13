@@ -45,8 +45,8 @@
   "Portfolio": {
     "name": "portfolio",
     "description": ["When redoing my portfolio, I decided to utilize some of the technologies I've been exploring since graduating from Epicodus. I began building my new site with create-react-app and use the Web Audio API to handle some light sound effects. I built an RESTful API with Express.js on another domain to validate and handle emails from the contact form.  My email server uses the reCAPTCHA, Nodemailer, and SendGrid's SMTP relay service. "],
-    "repoURL":  "https://chrismartinez.herokuapp.com/",
-    "liveURL": "",
+    "repoURL":  "https://github.com/cmartinez84/react-portfolio",
+    "liveURL": "https://chrismartinez.herokuapp.com/",
     "imageURL": "screenshots/simon.png",
     "technologies": ["React.js", "Web Audio API"]
   }

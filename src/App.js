@@ -22,7 +22,7 @@ import successSoundPath from './sounds/success.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'bio',
+    selectedPanel: 'projects',
     isModalShowing: false,
     gainNodeVolume: .3,
   }
@@ -103,7 +103,7 @@ class App extends Component {
 //
     return (
 
-      <div className="row" >
+      <div className="row page-content" >
 
         <div className="col-sm-3 menu-sidebar" >
           {Object.keys(allPanels)
@@ -122,7 +122,7 @@ class App extends Component {
                   </div>
           )}
         </div>
-        <div className="selectedPanel col-sm-8">
+        <div className="selected-panel col-sm-8">
             {allPanels[this.state.selectedPanel]}
         </div>
         <Footer/>
