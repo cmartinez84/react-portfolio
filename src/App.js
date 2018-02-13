@@ -20,7 +20,7 @@ import successSoundPath from './sounds/success.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'contact',
+    selectedPanel: 'bio',
     isModalShowing: false,
   }
 
