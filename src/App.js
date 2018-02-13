@@ -24,7 +24,6 @@ class App extends Component {
   state = {
     selectedPanel: 'projects',
     isModalShowing: false,
-    gainNodeVolume: .3,
   }
 
   audioCtx;
@@ -42,7 +41,7 @@ class App extends Component {
       this.gainNode = this.audioCtx.createGain();
       console.log(this.gainNode);
       this.gainNode.connect(this.audioCtx.destination);
-      this.gainNode.gain.value = this.state.gainNodeVolume;
+      this.gainNode.gain.value = .1;
 
       this.sound1 = this.audioFileLoader(soundPath1);
       this.sound2 = this.audioFileLoader(soundPath2);
@@ -86,6 +85,13 @@ class App extends Component {
   clearPanel=()=>{
     this.setState({selectedPanel: 'home'});
   }
+  toggleMute=()=>{
+    let newVolume;
+    this.gainNode.gain.value > 0 ? newVolume = 0: newVolume = .1;
+    this.gainNode.gain.value = newVolume;
+    console.log(this.gainNode.gain);
+
+  }
 
 
   render() {
@@ -125,7 +131,7 @@ class App extends Component {
         <div className="selected-panel col-sm-8">
             {allPanels[this.state.selectedPanel]}
         </div>
-        <Footer/>
+        <Footer toggleMute={this.toggleMute}/>
       </div>
     );
   }
