@@ -22,7 +22,7 @@ import successSoundPath from './sounds/success.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'projects',
+    selectedPanel: 'contact',
     isModalShowing: false,
   }
 
@@ -39,7 +39,6 @@ class App extends Component {
     if(localAudioInitializer ){
       this.audioCtx = new localAudioInitializer();
       this.gainNode = this.audioCtx.createGain();
-      console.log(this.gainNode);
       this.gainNode.connect(this.audioCtx.destination);
       this.gainNode.gain.value = .1;
 
@@ -89,7 +88,6 @@ class App extends Component {
     let newVolume;
     this.gainNode.gain.value > 0 ? newVolume = 0: newVolume = .1;
     this.gainNode.gain.value = newVolume;
-    console.log(this.gainNode.gain);
 
   }
 
@@ -113,8 +111,8 @@ class App extends Component {
 
         <div className="col-sm-3 menu-sidebar" >
           {Object.keys(allPanels)
-                  .map((panel)=>
-                  <div className="menu-row" >
+                  .map((panel, i)=>
+                  <div className="menu-row" key={i} >
                     <p
                       className={`main-menu-option
                         ${this.state.selectedPanel === panel ? 'selected-menu-option' : ''}

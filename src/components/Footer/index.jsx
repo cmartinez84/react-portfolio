@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 // import './footer.css';
 import './footer.css';
-const FontAwesome = require('react-fontawesome');
 
 
 
