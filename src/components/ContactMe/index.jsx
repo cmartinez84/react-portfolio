@@ -9,9 +9,6 @@ class ContactMe extends Component {
     recaptcha: '',
     sendingEmail: false
   }
-  componentWillMount=()=>{
-  }
-
   handleChange=(e)=>{
     this.setState({[e.target.name]: e.target.value})
   }

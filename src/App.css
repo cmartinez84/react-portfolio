@@ -33,12 +33,24 @@ body{
 .main-menu-option{
   transition: .3s;
   text-transform: uppercase;
+  font-family: 'Fugaz One', cursive;
 }
-.main-menu-option:hover, .selected-menu-option{
+.selected-menu-option{
   font-size: 1.5em;
   transition: .3s;
   color: #FF4500;
 }
+.main-menu-option:hover{
+  color: #FF4500;
+  font-size: 1.5em;
+  transition: .3s;
+}
+
+/*experiemtnal*/
+.main-menu-option::focus {
+  font-size: 4em
+}
+/*endexp*/
 
 .menu-sidebar{
   background-color: #212121;
@@ -69,3 +81,6 @@ width: 96%;
 color: #FFFF00;
 height: 1px;
 }*/
+h1{
+  font-family: 'Fugaz One', cursive
+}

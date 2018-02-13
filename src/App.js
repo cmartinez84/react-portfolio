@@ -12,6 +12,7 @@ import './App.css';
 import * as PROJECT_DATA from  './libraries/projects.json';
 
 
+
 import soundPath1 from './sounds/sound1.mp3';
 import soundPath2 from './sounds/sound2.mp3';
 import soundPath3 from './sounds/sound3.mp3';
@@ -21,7 +22,7 @@ import successSoundPath from './sounds/success.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'skills',
+    selectedPanel: 'bio',
     isModalShowing: false,
     gainNodeVolume: .3,
   }
@@ -103,10 +104,11 @@ class App extends Component {
     return (
 
       <div className="row" >
-        <div className="col-sm-3 menu-sidebar">
+
+        <div className="col-sm-3 menu-sidebar" >
           {Object.keys(allPanels)
                   .map((panel)=>
-                  <div className="menu-row">
+                  <div className="menu-row" >
                     <p
                       className={`main-menu-option
                         ${this.state.selectedPanel === panel ? 'selected-menu-option' : ''}
@@ -121,7 +123,7 @@ class App extends Component {
           )}
         </div>
         <div className="selectedPanel col-sm-8">
-          {allPanels[this.state.selectedPanel]}
+            {allPanels[this.state.selectedPanel]}
         </div>
         <Footer/>
       </div>
