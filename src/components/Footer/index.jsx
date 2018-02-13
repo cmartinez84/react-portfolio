@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 // import './footer.css';
 import './footer.css';
-
-
-
-
-
+import PropTypes from 'prop-types';
 
 class Footer extends Component {
   state = {
@@ -33,6 +29,10 @@ class Footer extends Component {
       </div>
     );
   }
+}
+
+Footer.propTypes = {
+  toggleMute: PropTypes.func.isRequired
 }
 
 export default Footer;

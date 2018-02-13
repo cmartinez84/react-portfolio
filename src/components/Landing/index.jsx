@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import './landing.css';
 
 
@@ -45,5 +47,7 @@ class Landing extends Component {
     );
   }
 }
-
+Landing.propTypes = {
+  redirectTo : PropTypes.func.isRequired
+}
 export default Landing;

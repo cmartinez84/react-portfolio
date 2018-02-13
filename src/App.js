@@ -11,8 +11,6 @@ import './App.css';
 
 import * as PROJECT_DATA from  './libraries/projects.json';
 
-
-
 import soundPath1 from './sounds/sound1.mp3';
 import soundPath2 from './sounds/sound2.mp3';
 import soundPath3 from './sounds/sound3.mp3';

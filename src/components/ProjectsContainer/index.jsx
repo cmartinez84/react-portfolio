@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Project from './../Project/index.jsx';
 import './ProjectsContainer.css';
 
@@ -100,4 +102,8 @@ class ProjectsContainer extends Component {
   }
 }
 
+ProjectsContainer.propTypes = {
+  selectSound: PropTypes.object.isRequired,
+  hoverSound: PropTypes.object.isRequired
+}
 export default ProjectsContainer;

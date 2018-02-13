@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 
 import './progressbar.css';
 
@@ -133,11 +134,7 @@ class ContactMe extends Component {
   }
 }
 
-
-// <ReCAPTCHA
-//   ref="recaptcha"
-//   sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY}
-//   onChange={this.handleCaptchaChange}/>
-
-
+ContactMe.propTypes = {
+  successSound: PropTypes.object.isRequired
+}
 export default ContactMe;

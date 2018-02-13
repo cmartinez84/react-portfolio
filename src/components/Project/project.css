@@ -1,9 +1,8 @@
 .screenshot{
-  /*width: 100px;*/
-  /*max-width: */
   max-height: 220px;
   border: 1px solid rgba(0,0,0,.3);
 }
+
 .project-name{
   font-family: 'Fugaz One', cursive;
   background: rgb(33, 33, 33);
@@ -23,9 +22,11 @@
   line-height: 0;
   display: inline-block;
 }
+
 .description-text{
   font-family: 'Open Sans', sans-serif;
 }
+
 .project-modal-technologies{
   border: 1px solid black;
   padding: 1px 10px;

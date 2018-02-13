@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './project.css'
+import PropTypes from 'prop-types';
+
 
 class Project extends Component {
   render() {
@@ -45,6 +47,15 @@ class Project extends Component {
       </div>
     );
   }
+}
+Project.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.array.isRequired,
+  repoURL: PropTypes.string.isRequired,
+  liveURL: PropTypes.string,
+  imageURL: PropTypes.string,
+  liveURL: PropTypes.string,
+  technologies: PropTypes.array.isRequired
 }
 
 export default Project;

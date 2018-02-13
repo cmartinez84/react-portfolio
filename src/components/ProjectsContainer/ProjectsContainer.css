@@ -1,5 +1,5 @@
 
-
+/*project previews*/
 .project-preview-container{
   height: 200px;
   /*height: 300px;*/
@@ -42,8 +42,6 @@
   transition: .5s;
 }
 
-
-
 .project-preview-name{
 
   font-family: 'Fugaz One', cursive;
@@ -66,9 +64,6 @@
   position: absolute;
   top: 65%;
 }
-
-
-
 
 /*custom modal*/
 .custom-modal {
@@ -95,18 +90,12 @@
     padding: 28px;
     border: 1px solid #888;
 
-    /*width: 20%; */
-    /*width with bootstrap*/
-    /*custom vv */
-    /*background: transparent;*/
 }
 
 /* The Close Button */
 .close {
     color:  #FF4500;
-
     float: right;
-
     font-size: 48px;
     font-weight: bold;
 }
