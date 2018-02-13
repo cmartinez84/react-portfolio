@@ -12,7 +12,10 @@ class ContactMe extends Component {
     message: '',
     recaptcha: '',
     sendingEmail: false,
-    hasTried: false
+    hasTried: false,
+    responseSuccess: false,
+    responseFail: false,
+
   }
   handleChange=(e)=>{
     this.setState({[e.target.name]: e.target.value})
@@ -32,10 +35,18 @@ class ContactMe extends Component {
       this.state.recaptcha.length >  10)
       {
         this.sendEmail();
-        this.setState({sendingEmail: true});
+        this.setState({
+          sendingEmail: true,
+          responseFail: false,
+          responseSuccess: false
+        });
       }
       else{
-        this.setState({hasTried: true})
+        this.setState({
+          hasTried: true,
+          responseFail: false,
+          responseSuccess: false
+        })
       }
     }
 
@@ -65,10 +76,16 @@ class ContactMe extends Component {
                 subject: '',
                 message: '',
                 sendingEmail: false,
-                hasTried: false
+                hasTried: false,
+                responseSuccess: true
               });
               this.props.successSound.play();
-
+            }
+            else{
+              this.setState({
+                responseFail:true,
+                sendingEmail: false
+               })
             }
           });//end fetch/then
 
@@ -117,7 +134,20 @@ class ContactMe extends Component {
           }
       </div>
       <button type="button" className={progressButtonClass} onClick={this.handleSubmit} disabled={this.state.sendingEmail} >SUBMIT</button>
+      {
+        this.state.responseSuccess ?
+        <span class="alert alert-success pull-right" role="alert">
+          Your email was sent successfully. I will get back to you soon!
+        </span>: ''
+      }{
+        this.state.responseFail?
+        <span class="alert alert-danger pull-right" role="alert">
+          Your email could not be devilvered at this time!
+        </span>: ''
+      }
+
       <div className="row">
+
         {
           <ReCAPTCHA
           ref="recaptcha"
