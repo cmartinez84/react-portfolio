@@ -25,24 +25,18 @@ function FadeAndSlideTransition ({children, duration, in: inProp}) {
    // Start with component invisible and shifted up by 10%
    entering: {
      opacity: 0,
-     transform: 'rotate(7deg)',
-     transition: '5s'
+     transition: duration  +'s'
    },
    // Transition to component being visible and having its position reset.
    entered: {
      opacity: 1,
-     transform: 'rotate(17deg)',
-     transition: '5s'
+     transition: duration + 's',
 
    },
    // Fade element out and slide it back up on exit.
    exiting: {
      opacity: 0,
-     transform: 'rotate(79deg)',
-     transition: '2s'
-
-
-
+    //  transition: '2s'
    }
  }
 
@@ -52,14 +46,14 @@ function FadeAndSlideTransition ({children, duration, in: inProp}) {
 
 
  return (
-   <Transition in={inProp} timeout={{
+   <Transition in={inProp} exit={false} appear={true} timeout={{
      // Set 'enter' timeout to '0' so that enter animation
      // will start immediately.
-     enter: 5000,
+     enter: 0,
 
      // Set 'exit' timeout to 'duration' so that the 'exited'
      // status won't be applied until animation completes.
-     exit: 3000
+     exit: 0
    }}>
      {
        // Children is a function that receives the current
@@ -69,13 +63,12 @@ function FadeAndSlideTransition ({children, duration, in: inProp}) {
          if (status === 'exited') {
            return null
          }
-
+console.log(children);
          // Apply different styles to children based
          // on the current value of 'status'.
          const currentStyles = transitionStyles[status]
          return React.cloneElement(children, {
            style: Object.assign({}, defaultStyle, currentStyles),
-           curd: 'cursed'
          })
        }
      }

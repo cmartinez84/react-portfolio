@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import './project.css'
 import PropTypes from 'prop-types';
 
+import TransitionGroup from 'react-transition-group/TransitionGroup'
+import Fade from './../../Fade';
 
+import './project.css'
 
-
-class Project extends Component {
-  render() {
+const Project=(props)=>{
     return (
-      <div className="row">
+      <div className="row" style={props.style}>
         <div className="">
           <div className="project-name-wrapper">
-            <h2 className="project-name">{this.props.name}
+            <h2 className="project-name">{props.name}
               <span className="project-links pull-right">
                 {
-                  this.props.liveURL ?
-                  <a href={this.props.liveURL}
+                  props.liveURL ?
+                  <a href={props.liveURL}
                     className="contact-icon">
                     <i className="fas fa-eye" ></i>
                     </a> :''
                 }
 
-                <a href={this.props.repoURL}
+                <a href={props.repoURL}
                     className="contact-icon"
                     >
                   <i className="fab fa-github-square"></i>
@@ -31,34 +31,36 @@ class Project extends Component {
             </h2>
           </div>
           <div className="">
-            {this.props.technologies.map((tech)=>
-              <span className="project-modal-technologies">{tech} </span>
+            {props.technologies.map((tech, i)=>
+              <span className="project-modal-technologies" key={i}>{tech} </span>
             )}
           </div>
-          <img src={this.props.imageURL} className="screenshot pull-right"></img>
-              {this.props.description.map((paragraph, i)=>
+          <img src={props.imageURL} className="screenshot pull-right"></img>
+            <TransitionGroup>
+              {props.description.map((paragraph, i)=>
+                <Fade duration={.5+(.5 * i)} key={i}>
                   <span className="description-text">
                     <span>{paragraph}</span>
                     <br></br>
                   </span>
-
+                </Fade>
               )}
+            </TransitionGroup>
 
         </div>
 
       </div>
     );
-  }
 }
 
-// Project.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   description: PropTypes.array.isRequired,
-//   repoURL: PropTypes.string.isRequired,
-//   liveURL: PropTypes.string,
-//   imageURL: PropTypes.string,
-//   liveURL: PropTypes.string,
-//   technologies: PropTypes.array.isRequired
-// }
+Project.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.array.isRequired,
+  repoURL: PropTypes.string.isRequired,
+  liveURL: PropTypes.string,
+  imageURL: PropTypes.string,
+  liveURL: PropTypes.string,
+  technologies: PropTypes.array.isRequired
+}
 
 export default Project;

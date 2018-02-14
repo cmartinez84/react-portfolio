@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './skills.css';
 
-class Skills extends Component {
-
-
-  render() {
+const Skills = (props)=> {
 
     const techIcons = {
       angular : 'icons/angular.jpg',
@@ -21,7 +18,7 @@ class Skills extends Component {
     }
 
     return (
-      <div>
+      <div style={props.style}>
         <h1>SKILLS</h1>
         <div className="">
           {Object.keys(techIcons).map(key=>
@@ -36,7 +33,7 @@ class Skills extends Component {
         </div>
       </div>
     );
-  }
+
 }
 
 export default Skills;

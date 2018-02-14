@@ -8,6 +8,9 @@ import Skills from './components/Skills/index.jsx';
 import EducationExperience from './components/EducationExperience/index.jsx';
 import ProjectsContainer from './components/ProjectsContainer/index.jsx';
 
+import TransitionGroup from 'react-transition-group/TransitionGroup'
+import Fade from './Fade';
+
 
 import './App.css';
 
@@ -47,7 +50,6 @@ class App extends Component {
       this.selectSound = this.audioFileLoader(soundPath4);
       this.successSound = this.audioFileLoader(successSoundPath);
     }
-
   }
 
   audioFileLoader = (fileDirectory) =>{
@@ -101,12 +103,19 @@ class App extends Component {
             skills: <Skills/>,
             contact: <ContactMe successSound={this.successSound}/>
     }
+    const FadePanel = (panelName)=>{
+      return (
+        <Fade duration={1} key={panelName}>
+          {allPanels[panelName]}
+        </Fade>
+      )
+    }
 //
     return (
 
       <div className="row page-content" >
-
         <div className="col-sm-3 menu-sidebar" >
+
           {Object.keys(allPanels)
                   .map((panel, i)=>
                   <div className="menu-row" key={i} >
@@ -124,7 +133,9 @@ class App extends Component {
           )}
         </div>
         <div className="selected-panel col-sm-8">
-            {allPanels[this.state.selectedPanel]}
+          <TransitionGroup>
+            {FadePanel(this.state.selectedPanel)}
+          </TransitionGroup>
         </div>
         <Footer toggleMute={this.toggleMute}/>
       </div>

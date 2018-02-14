@@ -42,7 +42,7 @@ class ProjectsContainer extends Component {
 
   render() {
     const projectModal =
-    <div className="custom-modal row" >
+    <div className="custom-modal row" style={this.props.style}>
       <div className="custom-modal-content col-sm-8 col-sm-offset-2">
         <span className="close" onClick={this.toggleModal}>&times;</span>
           <div className="row project-component-wrapper">

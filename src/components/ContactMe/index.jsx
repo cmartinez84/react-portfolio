@@ -96,7 +96,7 @@ class ContactMe extends Component {
   render() {
     const progressButtonClass = classNames({['progress-bar']: this.state.sendingEmail, 'submit-contact': true})
     return (
-      <div >
+      <div style={this.props.style}>
         <h1>CONTACT ME TODAY</h1>
         <div className="form-group">
           <label>Email</label>

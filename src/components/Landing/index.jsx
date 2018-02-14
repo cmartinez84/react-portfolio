@@ -5,16 +5,14 @@ import './landing.css';
 
 
 
-class Landing extends Component {
+const Landing =(props)=> {
 
-  redirectTo=(panel)=>{
-    console.log(panel);
-    this.props.redirectTo(panel);
+  const redirectTo=(panel)=>{
+    props.redirectTo(panel);
   }
 
-  render() {
     return (
-      <div className="row">
+      <div className="row" style={props.style}>
         <div className="col-sm-4">
           <div className="img-responsive landing-photo-frame">
           <img src="sampleme.jpg" className="img-responsive landing-photo"></img>
@@ -40,14 +38,16 @@ class Landing extends Component {
           <h1>CHRIS MARTINEZ</h1>
           <h3 className="sub-header-font">Recent Epicodus Graduate and Junior Web Developer</h3>
           <p >What would you like to know about me?</p>
-          <p className="redirect-question" onClick={()=>this.redirectTo('bio')}>How did I get here?</p>
-          <p className="redirect-question" onClick={()=>this.redirectTo('projects')}>What am I programming?</p>
+          <p className="redirect-question" onClick={()=>redirectTo('bio')}>How did I get here?</p>
+          <p className="redirect-question" onClick={()=>redirectTo('projects')}>What am I programming?</p>
         </div>
       </div>
     );
-  }
+
 }
+
 Landing.propTypes = {
   redirectTo : PropTypes.func.isRequired
 }
+
 export default Landing;
