@@ -25,7 +25,7 @@ import successSoundPath from './sounds/success.mp3';
 
 class App extends Component {
   state = {
-    selectedPanel: 'bio',
+    selectedPanel: 'home',
   }
 
   audioCtx;

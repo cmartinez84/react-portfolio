@@ -60,7 +60,8 @@ Project.propTypes = {
   liveURL: PropTypes.string,
   imageURL: PropTypes.string,
   liveURL: PropTypes.string,
-  technologies: PropTypes.array.isRequired
+  technologies: PropTypes.array.isRequired,
+  style: PropTypes.object
 }
 
 export default Project;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import './skills.css';
 
 const Skills = (props)=> {
@@ -34,6 +36,10 @@ const Skills = (props)=> {
       </div>
     );
 
+}
+
+Skills.propTypes = {
+  style: PropTypes.object.isRequired
 }
 
 export default Skills;

@@ -63,7 +63,6 @@ function FadeAndSlideTransition ({children, duration, in: inProp}) {
          if (status === 'exited') {
            return null
          }
-console.log(children);
          // Apply different styles to children based
          // on the current value of 'status'.
          const currentStyles = transitionStyles[status]

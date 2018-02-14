@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
 import './landing.css';
 
 
@@ -47,7 +48,8 @@ const Landing =(props)=> {
 }
 
 Landing.propTypes = {
-  redirectTo : PropTypes.func.isRequired
+  redirectTo : PropTypes.func.isRequired,
+  style : PropTypes.object.isRequired
 }
 
 export default Landing;

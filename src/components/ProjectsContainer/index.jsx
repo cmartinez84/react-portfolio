@@ -106,6 +106,7 @@ class ProjectsContainer extends Component {
 
 ProjectsContainer.propTypes = {
   selectSound: PropTypes.object.isRequired,
-  hoverSound: PropTypes.object.isRequired
+  hoverSound: PropTypes.object.isRequired,
+  style: PropTypes.object.isRequired
 }
 export default ProjectsContainer;

@@ -165,6 +165,7 @@ class ContactMe extends Component {
 }
 
 ContactMe.propTypes = {
-  successSound: PropTypes.object.isRequired
+  successSound: PropTypes.object.isRequired,
+  style: PropTypes.object.isRequired
 }
 export default ContactMe;

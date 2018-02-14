@@ -16,7 +16,7 @@ body{
 h1{
   color: #FF4500;
   text-shadow:  0px 0px 1px  black;
-  font-family: 'Fugaz One', cursive
+  font-family: 'Fugaz One', sans-serif;;
 }
 
 .main-text-font{
@@ -30,7 +30,7 @@ h1{
 .main-menu-option{
   transition: .3s;
   text-transform: uppercase;
-  font-family: 'Fugaz One', cursive;
+  font-family: 'Fugaz One', sans-serif;;
 }
 .selected-menu-option{
   font-size: 1.5em;
