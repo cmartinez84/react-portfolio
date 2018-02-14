@@ -3,10 +3,12 @@ import './project.css'
 import PropTypes from 'prop-types';
 
 
+
+
 class Project extends Component {
   render() {
     return (
-      <div class="row">
+      <div className="row">
         <div className="">
           <div className="project-name-wrapper">
             <h2 className="project-name">{this.props.name}
@@ -15,14 +17,14 @@ class Project extends Component {
                   this.props.liveURL ?
                   <a href={this.props.liveURL}
                     className="contact-icon">
-                    <i class="fas fa-eye" ></i>
+                    <i className="fas fa-eye" ></i>
                     </a> :''
                 }
 
                 <a href={this.props.repoURL}
                     className="contact-icon"
                     >
-                  <i class="fab fa-github-square"></i>
+                  <i className="fab fa-github-square"></i>
                 </a>
               </span>
 
@@ -34,13 +36,13 @@ class Project extends Component {
             )}
           </div>
           <img src={this.props.imageURL} className="screenshot pull-right"></img>
+              {this.props.description.map((paragraph, i)=>
+                  <span className="description-text">
+                    <span>{paragraph}</span>
+                    <br></br>
+                  </span>
 
-          {this.props.description.map((paragraph)=>
-            <span className="description-text">
-              <span>{paragraph}</span>
-              <br></br>
-            </span>
-          )}
+              )}
 
         </div>
 
@@ -48,14 +50,15 @@ class Project extends Component {
     );
   }
 }
-Project.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.array.isRequired,
-  repoURL: PropTypes.string.isRequired,
-  liveURL: PropTypes.string,
-  imageURL: PropTypes.string,
-  liveURL: PropTypes.string,
-  technologies: PropTypes.array.isRequired
-}
+
+// Project.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   description: PropTypes.array.isRequired,
+//   repoURL: PropTypes.string.isRequired,
+//   liveURL: PropTypes.string,
+//   imageURL: PropTypes.string,
+//   liveURL: PropTypes.string,
+//   technologies: PropTypes.array.isRequired
+// }
 
 export default Project;

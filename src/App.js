@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import AboutMe from './components/AboutMe/index.jsx'
-import Footer from './components/Footer/index.jsx'
-import ContactMe from './components/ContactMe/index.jsx'
-import Landing from './components/Landing/index.jsx'
-import Skills from './components/Skills/index.jsx'
-import EducationExperience from './components/EducationExperience/index.jsx'
-import ProjectsContainer from './components/ProjectsContainer/index.jsx'
+import AboutMe from './components/AboutMe/index.jsx';
+import Footer from './components/Footer/index.jsx';
+import ContactMe from './components/ContactMe/index.jsx';
+import Landing from './components/Landing/index.jsx';
+import Skills from './components/Skills/index.jsx';
+import EducationExperience from './components/EducationExperience/index.jsx';
+import ProjectsContainer from './components/ProjectsContainer/index.jsx';
+
+
 import './App.css';
 
 import * as PROJECT_DATA from  './libraries/projects.json';
@@ -21,7 +23,6 @@ import successSoundPath from './sounds/success.mp3';
 class App extends Component {
   state = {
     selectedPanel: 'bio',
-    isModalShowing: false,
   }
 
   audioCtx;
@@ -86,9 +87,7 @@ class App extends Component {
     let newVolume;
     this.gainNode.gain.value > 0 ? newVolume = 0: newVolume = .1;
     this.gainNode.gain.value = newVolume;
-
   }
-
 
   render() {
 

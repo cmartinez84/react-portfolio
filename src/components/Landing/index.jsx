@@ -22,17 +22,17 @@ class Landing extends Component {
             <a href="https://github.com/cmartinez84"
               className="contact-icon"
               >
-              <h1><i class="fab fa-linkedin" ></i></h1>
+              <h1><i className="fab fa-linkedin" ></i></h1>
               </a>
             <a href="https://www.linkedin.com/in/cmartinez84/"
                 className="contact-icon"
                 >
-              <h1><i class="fab fa-github-square"></i></h1>
+              <h1><i className="fab fa-github-square"></i></h1>
             </a>
             <a href="https://github.com/cmartinez84"
               className="contact-icon"
               >
-              <h1><i class="fas fa-envelope"></i>
+              <h1><i className="fas fa-envelope"></i>
               </h1>
               </a>
         </div>

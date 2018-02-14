@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
+
 import Project from './../Project/index.jsx';
 import './ProjectsContainer.css';
 
@@ -44,18 +46,18 @@ class ProjectsContainer extends Component {
       <div className="custom-modal-content col-sm-8 col-sm-offset-2">
         <span className="close" onClick={this.toggleModal}>&times;</span>
           <div className="row project-component-wrapper">
-            {Object.keys(PROJECT_DATA).map((i)=>
+            {Object.keys(PROJECT_DATA).map((i, n)=>
               i === this.state.selectedProject ?
-              <Project
-                name={PROJECT_DATA[i].name}
-                description={PROJECT_DATA[i].description}
-                liveURL={PROJECT_DATA[i].liveURL}
-                repoURL={PROJECT_DATA[i].repoURL}
-                imageURL={PROJECT_DATA[i].imageURL}
-                technologies={PROJECT_DATA[i].technologies}
-                key={PROJECT_DATA[i].name}
-                 />
-               :''
+                <Project
+                  name={PROJECT_DATA[i].name}
+                  description={PROJECT_DATA[i].description}
+                  liveURL={PROJECT_DATA[i].liveURL}
+                  repoURL={PROJECT_DATA[i].repoURL}
+                  imageURL={PROJECT_DATA[i].imageURL}
+                  technologies={PROJECT_DATA[i].technologies}
+                  key={PROJECT_DATA[i].name}
+                   />
+               :null
             )}
           </div>
 
@@ -85,8 +87,8 @@ class ProjectsContainer extends Component {
 
                 </div>
                 <div className=" technologies-container">
-                  {PROJECT_DATA[i].technologies.map((tech)=>
-                    <span className="project-preview-technologies ">{tech} </span>
+                  {PROJECT_DATA[i].technologies.map((tech,i)=>
+                    <span className="project-preview-technologies " key={i}>{tech} </span>
                   )}
                 </div>
             </div>
