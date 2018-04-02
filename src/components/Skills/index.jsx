@@ -16,7 +16,8 @@ const Skills = (props)=> {
       mysql : 'icons/mysql.png',
       pantheon: 'icons/pantheon.png',
       react: 'icons/react.png',
-      silex: 'icons/silex.png'
+      silex: 'icons/silex.png',
+      reactNative: 'icons/react-native.png'
     }
 
     return (

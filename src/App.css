@@ -1,5 +1,6 @@
 html{
-  background: url('https://ak3.picdn.net/shutterstock/videos/26096963/thumb/1.jpg') center center no-repeat;
+  background: url('/subtle.jpg') center center no-repeat;
+  /*background: url('https://ak3.picdn.net/shutterstock/videos/26096963/thumb/1.jpg') center center no-repeat;*/
   background-size: cover;
   height: 100%;
 }

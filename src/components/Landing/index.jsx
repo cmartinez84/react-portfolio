@@ -16,7 +16,7 @@ const Landing =(props)=> {
       <div className="row" style={props.style}>
         <div className="col-sm-4">
           <div className="img-responsive landing-photo-frame">
-          <img src="sampleme.jpg" className="img-responsive landing-photo"></img>
+          <img src="meglitched.png" className="img-responsive landing-photo"></img>
           </div>
             <a href="https://github.com/cmartinez84"
               className="contact-icon"
