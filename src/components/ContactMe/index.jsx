@@ -98,6 +98,7 @@ class ContactMe extends Component {
     return (
       <div style={this.props.style}>
         <h1>CONTACT ME TODAY</h1>
+        <p>You can also email me at cardamomclouds84@gmail.com</p>
         <div className="form-group">
           <label>Email</label>
           <input type="email" placeholder="GwenIfillTower@gmail.com" className="form-control" id="contact-email" value={this.state.email}

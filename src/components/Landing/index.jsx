@@ -28,7 +28,8 @@ const Landing =(props)=> {
                 >
               <h1><i className="fab fa-github-square"></i></h1>
             </a>
-            <a href="https://github.com/cmartinez84"
+            <a href="#"
+              onClick={()=>redirectTo('contact')}
               className="contact-icon"
               >
               <h1><i className="fas fa-envelope"></i>
@@ -41,6 +42,9 @@ const Landing =(props)=> {
           <p >What would you like to know about me?</p>
           <p className="redirect-question" onClick={()=>redirectTo('bio')}>How did I get here?</p>
           <p className="redirect-question" onClick={()=>redirectTo('projects')}>What am I programming?</p>
+
+          <p>...Or just shoot me an email at cardamomclouds84@gmail.com</p>
+
         </div>
       </div>
     );
