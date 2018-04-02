@@ -3,7 +3,7 @@
     "name": "HABO",
     "description":["USER: demo@habo.com PASSWORD: demohabo", "HABO is a personal project of mine to help Starbucks baristas communicate shift trades better among their coworkers and the community at large. Having worked at Starbucks for some time, I have intimate knowledge of the UX I desire and logistical problems I face, as well as the passion to move forward", "This demo project is built with a basic installation of Drupal 7. Some features I currently have enabled include Geograhical organization, custom content-types, Drupal Rules, custom modules, and fairly extensive use of views for organizing shifts available for trade.", "Feel free to log in with the demo account and post a shift. (Note, all posts delete after 30 days by design, so sample data may be scarce).", "As of March 2018, I have begun working on an entirely new and decoupled version in Drupal 8 and React Native."],
     "repoURL": "https://github.com/cmartinez84/UpShift",
-    "liveURL": "https://live-habo.pantheonsite.io/",
+    "liveURL": "https://dev-habo.pantheonsite.io/",
     "imageURL": "screenshots/Habo.png",
     "technologies": ["Drupal", "PHP"]
   },
