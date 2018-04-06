@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import './progressbar.css';
 
+const emailService = require('./emailService.js');
+
 class ContactMe extends Component {
   state={
     email: '',
@@ -34,7 +36,7 @@ class ContactMe extends Component {
       this.state.email.indexOf('.') > 0 &&
       this.state.recaptcha.length >  10)
       {
-        this.sendEmail();
+        this.prepareEmailRequest();
         this.setState({
           sendingEmail: true,
           responseFail: false,
@@ -50,7 +52,7 @@ class ContactMe extends Component {
       }
     }
 
-    sendEmail=()=>{
+    prepareEmailRequest=()=>{
 
       const messageData = {
         "email": this.state.email,
@@ -63,31 +65,51 @@ class ContactMe extends Component {
       const EMAIL_API_URL= process.env.REACT_APP_EMAIL_API_URL;
 
       const endpointURL = `${EMAIL_API_URL}/send/${EMAIL_API_KEY}`;
+      
+      emailService.sendEmail(messageData, endpointURL, (data)=>{
+        if(data.success === true){
+          this.setState({
+            email: '',
+            subject: '',
+            message: '',
+            sendingEmail: false,
+            hasTried: false,
+            responseSuccess: true
+          });
+          this.props.successSound.play();
+        }
+        else{
+          this.setState({
+            responseFail:true,
+            sendingEmail: false
+           })
+        }
+      })
 
-      fetch(endpointURL, {
-          method: 'POST',
-          body: JSON.stringify(messageData),
-          headers: { "Content-Type": "application/json" }})
-          .then((res)=> res.json())
-          .then((data)=>{
-            if(data.success === true){
-              this.setState({
-                email: '',
-                subject: '',
-                message: '',
-                sendingEmail: false,
-                hasTried: false,
-                responseSuccess: true
-              });
-              this.props.successSound.play();
-            }
-            else{
-              this.setState({
-                responseFail:true,
-                sendingEmail: false
-               })
-            }
-          });//end fetch/then
+      // fetch(endpointURL, {
+      //     method: 'POST',
+      //     body: JSON.stringify(messageData),
+      //     headers: { "Content-Type": "application/json" }})
+      //     .then((res)=> res.json())
+      //     .then((data)=>{
+      //       if(data.success === true){
+      //         this.setState({
+      //           email: '',
+      //           subject: '',
+      //           message: '',
+      //           sendingEmail: false,
+      //           hasTried: false,
+      //           responseSuccess: true
+      //         });
+      //         this.props.successSound.play();
+      //       }
+      //       else{
+      //         this.setState({
+      //           responseFail:true,
+      //           sendingEmail: false
+      //          })
+      //       }
+      //     });//end fetch/then
 
     }
     //website down
@@ -155,8 +177,6 @@ class ContactMe extends Component {
           sitekey={process.env.REACT_APP_CAPTCHA_SITE_KEY}
           onChange={this.handleCaptchaChange}/>
         }
-
-
 
       </div>
 
