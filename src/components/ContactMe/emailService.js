@@ -1,4 +1,4 @@
-export const sendEmail = function(endpointURL, messageData, cb){
+export const sendEmail = function(messageData, endpointURL, cb){
   fetch(endpointURL, {
       method: 'POST',
       body: JSON.stringify(messageData),
